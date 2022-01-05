@@ -2,5 +2,5 @@ Update the relevant changes for the pipeline.yaml for simple tasks for creating 
       Pipeline.yaml
           Tasks for Terraform init
               Backend initialization for the terraform
-          Tasks for Terrafomr Apply
+          Tasks for Terraform Apply
               referencing the terraform tf files add IOC to add teh infrastructure code

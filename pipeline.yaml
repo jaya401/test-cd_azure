@@ -1,0 +1,26 @@
+
+trigger: none
+
+pool: AgentPool
+
+
+
+steps:
+  - task: TerraformTaskV1@0 
+    inputs:
+      provider: 'azurerm'
+      command: 'init'
+      workingDirectory: 'terraform'
+      backendServiceArm: 'NPRD-ServiceConnection'
+      backendAzureRmResourceGroupName: 'devops-rg'
+      backendAzureRmStorageAccountName: 'devopsstattnp4rlm'
+      backendAzureRmContainerName: 'tfstate-1989'
+      backendAzureRmKey: 'tf/terraform.tfstate'
+
+
+  - task: TerraformTaskV1@0
+    inputs:
+      provider: 'azurerm'
+      command: 'apply'
+      workingDirectory: 'terraform'
+      environmentServiceNameAzureRM: 'NPRD-ServiceConnection'
